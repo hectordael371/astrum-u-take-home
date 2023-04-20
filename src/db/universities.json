@@ -1,0 +1,245 @@
+{
+    "universities": [
+      {
+        "id": 1,
+        "name": "Alabama A & M University",
+        "city": {
+          "id": 1,
+          "name": "Huntsville",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "name": "University of Alabama at Birmingham",
+        "city": {
+          "id": 2,
+          "name": "Birmingham",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "name": "Amridge University",
+        "city": {
+          "id": 3,
+          "name": "Montgomery",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "name": "University of Alabama in Huntsville",
+        "city": {
+          "id": 1,
+          "name": "Huntsville",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "name": "Alabama State University",
+        "city": {
+          "id": 1,
+          "name": "Huntsville",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 6,
+        "name": "University of Alabama System Office",
+        "city": {
+          "id": 1,
+          "name": "Huntsville",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 7,
+        "name": "The University of Alabama",
+        "city": {
+          "id": 1,
+          "name": "Huntsville",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 8,
+        "name": "Central Alabama Community College",
+        "city": {
+          "id": 8,
+          "name": "Alexander City",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 9,
+        "name": "Athens State University",
+        "city": {
+          "id": 9,
+          "name": "Athens",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 10,
+        "name": "Auburn University at Montgomery",
+        "city": {
+          "id": 10,
+          "name": "Auburn",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 11,
+        "name": "Auburn University",
+        "city": {
+          "id": 10,
+          "name": "Auburn",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 12,
+        "name": "Birmingham Southern College",
+        "city": {
+          "id": 2,
+          "name": "Birmingham",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 13,
+        "name": "Chattahoochee Valley Community College",
+        "city": {
+          "id": 13,
+          "name": "Phenix City",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 14,
+        "name": "Concordia College Alabama",
+        "city": {
+          "id": 14,
+          "name": "Selma",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 15,
+        "name": "South University-Montgomery",
+        "city": {
+          "id": 15,
+          "name": "Montgomery",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 16,
+        "name": "Enterprise State Community College",
+        "city": {
+          "id": 16,
+          "name": "Enterprise",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 17,
+        "name": "Coastal Alabama Community College",
+        "city": {
+          "id": 17,
+          "name": "Bay Minette",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 18,
+        "name": "Faulkner University",
+        "city": {
+          "id": 18,
+          "name": "Montgomery",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 19,
+        "name": "Gadsden State Community College",
+        "city": {
+          "id": 19,
+          "name": "Gadsden",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      },
+      {
+        "id": 20,
+        "name": "New Beginning College of Cosmetology",
+        "city": {
+          "id": 20,
+          "name": "Albertville",
+          "state": {
+            "id": 1,
+            "name": "Alabama"
+          }
+        }
+      }
+    ]
+  }
+  
