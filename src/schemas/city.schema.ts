@@ -1,5 +1,5 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
-import { State } from './state.dto'
+import { State } from './state.schema'
 
 @ObjectType()
 export class City {
@@ -13,7 +13,7 @@ export class City {
     })
     name: string;
 
-    @Field(() => State, {
+    @Field(type => State, {
         description: 'Object representing the State where the City resides in.'
     })
     state: State;

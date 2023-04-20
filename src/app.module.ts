@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
-import { join } from 'path';
-import { FooResolver } from 'src/resolvers/foo.resolver'
-import { AuthorsResolver } from './resolvers/authors.resolver';
+import { UniversityService } from './services/university/university.service';
+import { UniversityRepository } from './repositories/university/university.repository';
+import { UniversityResolver } from './resolvers/university/university.resolver';
 
 @Module({
   imports: [
@@ -13,6 +13,6 @@ import { AuthorsResolver } from './resolvers/authors.resolver';
       autoSchemaFile: true
     }),
   ],
-  providers:[FooResolver, AuthorsResolver]
+  providers:[UniversityResolver, UniversityService, UniversityRepository]
 })
 export class AppModule {}
