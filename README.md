@@ -71,3 +71,84 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+## GraphQL Playground 
+- Navigate to http://localhost:3000/graphql
+
+- Sample query to test Get All Universities:
+query {
+  universities {
+    id, 
+    name,
+    city {
+      id,
+      name,
+      state{
+        id, 
+        name
+      }
+    }
+  }
+}
+
+- Sample query to test Get University by Id:
+query {
+  university(id: 22) {
+    id, 
+    name,
+    city {
+      id,
+      name,
+      state{
+        id, 
+        name
+      }
+    }
+  }
+}
+
+- Sample query to test Authorize and retrieve Bearer Token:
+query {
+  authorize
+}
+
+- Sample query to test Create University:
+mutation {
+  createUniversity(university: {
+  	id: 22,
+  	name: "Last test university",
+  	city: {
+    	id: 20,
+    	name: "Albertville",
+      state: {
+      	id: 1,
+      	name: "Alabama"
+    	}
+  	}
+	})
+}
+
+NOTE: This mutation requires authorization. To do so, navigate to Http Headers and paste the following body with token retrieved in previous step:
+{
+  "Authorization": "Bearer <<PasteTokenHere>>"
+}
+
+- Sample query to test Update University:
+mutation {
+  updateUniversity(university: {
+  	id: 22,
+  	name: "University of Alabama",
+  	city: {
+    	id: 20,
+    	name: "Albertville",
+      state: {
+      	id: 1,
+      	name: "Alabama"
+    	}
+  	}
+	})
+}
+NOTE: This mutation requires authorization. To do so, navigate to Http Headers and paste the following body with token retrieved in previous step:
+{
+  "Authorization": "Bearer <<PasteTokenHere>>"
+}
