@@ -1,7 +1,8 @@
-import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Field, InputType, Int, ObjectType } from '@nestjs/graphql';
 import { State } from './state.schema'
 
 @ObjectType()
+@InputType('CityInput')
 export class City {
     @Field(() => Int, {
         description: 'Unique identifier value for the City.'

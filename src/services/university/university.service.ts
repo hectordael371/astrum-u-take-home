@@ -1,4 +1,4 @@
-import { HttpException, NotFoundException } from "@nestjs/common/exceptions";
+import { BadRequestException, HttpException, NotFoundException } from "@nestjs/common/exceptions";
 import { IUniversityService } from "./university.service.interface";
 import { University } from 'src/schemas'
 import { UniversityRepository } from "src/repositories/university/university.repository";
@@ -54,11 +54,41 @@ export class UniversityService implements IUniversityService {
         }
     }
 
-    async createUniversity(): Promise<number> {
-        throw new Error("Method not implemented.");
+    async createUniversity(university: University): Promise<number> {
+        try {
+            let existingUniversity = await this.universityRepository.findOne(university.id);
+
+            if (existingUniversity){
+                throw new BadRequestException(`University with id ${university.id} already exists.`);
+            }
+
+            return await this.universityRepository.create(university);
+        }
+        catch(error) {
+            if (error instanceof BadRequestException) {
+                throw error; // re-throw BadRequestException to ensure a 400 status code
+            }
+    
+            throw new HttpException(`Unexpected error occurred: ${error.message}`, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
-    async updateUniversity(): Promise<number> {
-        throw new Error("Method not implemented.");
+    async updateUniversity(university: University): Promise<number> {
+        try {
+            let existingUniversity = await this.universityRepository.findOne(university.id);
+
+            if (!existingUniversity){
+                throw new NotFoundException(`University with id ${university.id} was not found.`);
+            }
+
+            return await this.universityRepository.update(university);
+        }
+        catch(error) {
+            if (error instanceof NotFoundException) {
+                throw error; // re-throw NotFoundException to ensure a 404 status code
+            }
+    
+            throw new HttpException(`Unexpected error occurred: ${error.message}`, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }
