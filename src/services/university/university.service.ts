@@ -41,7 +41,7 @@ export class UniversityService implements IUniversityService {
                         return university;
                     }
                     else {
-                        throw new NotFoundException("Resource 'University' was not found.")
+                        throw new NotFoundException(`Resource 'University' was not found with id ${id}.`)
                     }
                 })
         }
