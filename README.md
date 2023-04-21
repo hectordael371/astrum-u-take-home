@@ -130,7 +130,7 @@ mutation {
 
 NOTE: This mutation requires authorization. To do so, navigate to Http Headers and paste the following body with token retrieved in previous step:
 {
-  "Authorization": "Bearer <<PasteTokenHere>>"
+  "Authorization": "Bearer { Paste Token Here }"
 }
 
 - Sample query to test Update University:
@@ -148,7 +148,8 @@ mutation {
   	}
 	})
 }
+
 NOTE: This mutation requires authorization. To do so, navigate to Http Headers and paste the following body with token retrieved in previous step:
 {
-  "Authorization": "Bearer <<PasteTokenHere>>"
+  "Authorization": "Bearer { Paste Token Here }"
 }
