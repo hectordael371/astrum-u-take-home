@@ -251,6 +251,18 @@
           "name": "Alabama"
         }
       }
+    },
+    {
+      "id": 22,
+      "name": "University of Alabama",
+      "city": {
+        "id": 20,
+        "name": "Albertville",
+        "state": {
+          "id": 1,
+          "name": "Alabama"
+        }
+      }
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Logger, Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { UniversityService } from './services/university/university.service';
@@ -31,7 +31,8 @@ import { JwtStrategy } from './authorization/authorization.strategy';
     UniversityRepository,
     AuthorizationResolver,
     AuthorizationService,
-    JwtStrategy
+    JwtStrategy,
+    Logger
   ]
 })
 export class AppModule {}

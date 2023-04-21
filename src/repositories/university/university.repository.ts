@@ -1,15 +1,14 @@
-import data from 'src/db/universities.json';
 import { University, City, State } from 'src/schemas';
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable, Logger } from '@nestjs/common';
 import { IUniversityRepository } from './university.repository.interface';
 import { readFileSync, writeFileSync } from 'fs';
+import { EventMessages } from 'src/logging/event.messages';
 
-// Maybe should be singleton to avoid desynchronization of data when multiple clients access api simultaneously
 @Injectable()
 export class UniversityRepository implements IUniversityRepository {
-    constructor() {
-        // inject logging service
-
+    constructor(
+        @Inject(Logger) private logger: Logger
+    ) {
         /*
             In real world, this is where we would initialize the database driver or inject through DI.
         */
@@ -46,10 +45,12 @@ export class UniversityRepository implements IUniversityRepository {
                     universities.push(university);
                 }
 
+                this.logger.log(EventMessages.CompletedFetchingAllUniversitiesFromDatabase);
                 resolve(universities);
             })
         }
         catch(error) {
+            this.logger.error(EventMessages.ErrorFetchingAllUniversitiesFromDatabase)
             throw new Error(`Unexpected error occurred: ${error.message}`)
         }
     }
@@ -67,10 +68,12 @@ export class UniversityRepository implements IUniversityRepository {
                     (obj) => obj['id'] === id,
                 );
 
+                this.logger.log(EventMessages.CompletedFetchingUniversityByIdFromDatabase);
                 resolve(university);
             })
         }
         catch(error) {
+            this.logger.error(EventMessages.ErrorFetchingUniversityByIdFromDatabase);
             throw new Error(`Unexpected error occurred: ${error.message}`)
         }
     }
@@ -92,10 +95,12 @@ export class UniversityRepository implements IUniversityRepository {
             writeFileSync('src/db/universities.json', jsonData);
 
             return new Promise<number>((resolve) => {
+                this.logger.log(EventMessages.CompletedCreatingUniversityInDatabase);
                 resolve(university.id);
             })
         }
         catch(error) {
+            this.logger.error(EventMessages.ErrorCreatingUniversityInDatabase);
             throw new Error(`Unexpected error occurred: ${error.message}`)
         }
     }
@@ -126,10 +131,12 @@ export class UniversityRepository implements IUniversityRepository {
             writeFileSync('src/db/universities.json', jsonData);
 
             return new Promise<number>((resolve) => {
+                this.logger.log(EventMessages.CompletedUpdatingUniversityInDatabase);
                 resolve(university.id);
             })
         }
         catch(error) {
+            this.logger.error(EventMessages.ErrorUpdatingUniversityInDatabase);
             throw new Error(`Unexpected error occurred: ${error.message}`)
         }
     }
